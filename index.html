@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <title>Office Depot Login</title>
+
+
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style type="text/css">
+    .icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+.row{margin-bottom: 0px;}
+.login_wrapper{min-height: 100vh; padding: 0px;margin: 0px; display: block;width: 100%;}
+.login_wrapper .left-side{background-image: url(../images/login-bg.jpg); background-repeat: no-repeat; background-size: cover; height: 100vh; position: relative;}
+.login_wrapper .left-side:before{position: absolute; content: ''; background-color: rgba(206,0,0,0.6); width: 100%; height: 100%;left: 0px; top: 0px;}
+.login_wrapper .right-side{ padding: 15px; background-color: #fff; min-height: 100vh; position: relative;}
+.login_wrapper h1{    font-weight: 700; color: #ce0000; background-color: #ce00000f; margin: 0px; margin-top: -15px; margin-left: -15px; margin-bottom: 15px; width: calc(100% + 30px);padding: 15px; font-size: 400%; line-height: 65px;}
+.w-45{ width: 45%; margin: 0 auto;padding: 15px; position: absolute;transform: translate(-50%, -50%); top: 50%; left: 50%;}
+input:not([type]):focus:not([readonly]) + label, input[type=text]:not(.browser-default):focus:not([readonly]) + label, input[type=password]:not(.browser-default):focus:not([readonly]) + label, input[type=email]:not(.browser-default):focus:not([readonly]) + label, input[type=url]:not(.browser-default):focus:not([readonly]) + label, input[type=time]:not(.browser-default):focus:not([readonly]) + label, input[type=date]:not(.browser-default):focus:not([readonly]) + label, input[type=datetime]:not(.browser-default):focus:not([readonly]) + label, input[type=datetime-local]:not(.browser-default):focus:not([readonly]) + label, input[type=tel]:not(.browser-default):focus:not([readonly]) + label, input[type=number]:not(.browser-default):focus:not([readonly]) + label, input[type=search]:not(.browser-default):focus:not([readonly]) + label, textarea.materialize-textarea:focus:not([readonly]) + label{color: #3379c2;}
+input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){border-bottom: 1px solid #3379c2; -webkit-box-shadow: 0 1px 0 0 #3379c2; box-shadow: 0 1px 0 0 #3379c2;}
+input.valid:not([type]), input.valid:not([type]):focus, input[type=text].valid:not(.browser-default), input[type=text].valid:not(.browser-default):focus, input[type=password].valid:not(.browser-default), input[type=password].valid:not(.browser-default):focus, input[type=email].valid:not(.browser-default), input[type=email].valid:not(.browser-default):focus, input[type=url].valid:not(.browser-default), input[type=url].valid:not(.browser-default):focus, input[type=time].valid:not(.browser-default), input[type=time].valid:not(.browser-default):focus, input[type=date].valid:not(.browser-default), input[type=date].valid:not(.browser-default):focus, input[type=datetime].valid:not(.browser-default), input[type=datetime].valid:not(.browser-default):focus, input[type=datetime-local].valid:not(.browser-default), input[type=datetime-local].valid:not(.browser-default):focus, input[type=tel].valid:not(.browser-default), input[type=tel].valid:not(.browser-default):focus, input[type=number].valid:not(.browser-default), input[type=number].valid:not(.browser-default):focus, input[type=search].valid:not(.browser-default), input[type=search].valid:not(.browser-default):focus, textarea.materialize-textarea.valid, textarea.materialize-textarea.valid:focus, .select-wrapper.valid > input.select-dropdown{    border-bottom: 1px solid #3379c2; -webkit-box-shadow: 0 1px 0 0 #3379c2; box-shadow: 0 1px 0 0 #3379c2;}
+.btn-bg{background-color: #3379c2; margin-left: 10px; margin-top: 10px;}
+.btn-bg:hover, .btn-bg:focus{background-color: #3379c2;}
+@media only screen and (max-width: 1500px){
+.w-45{ width: 80%;}
+}
+@media only screen and (max-width: 992px){
+.w-45{ width: 100%;position: static; transform: translate(0%, 0%); margin-top: 20px; }
+}
+  </style>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+  
+  <div class="login_wrapper">
+    <div class="row">
+      <div class="col m6 offset-m3 s12 offset-s0 right-side">
+        <div class="w-45 z-depth-1">
+        <h1 class="center">
+        <img src="images/logo.svg">
+        <div class="clear"></div>
+        Demo
+      </h1>
+<div class="row">
+    <form class="col s12" method="GET">
+      <div class="row">
+
+        <div class="input-field col s12">
+          <input id="userName" ng-model="userName" type="text" class="validate">
+          <label for="userName">User Id</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="password" ng-model="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+        <div class="clear"></div>
+       
+<!--         <a class="waves-effect waves-light btn btn-bg" ng-disabled="((!userName) || (!password))" ng-click='createLink(userName,password)' href="fselite://localhost:8100/">
+          Log in
+        </a> -->
+         <a class="waves-effect waves-light btn btn-bg" ng-click='try_to_open_app()' href="fselite://localhost:8100/?WOID=1296524">
+          Log in
+        </a>
+     
+      </div>
+    </form>
+    </div>
+      </div>
+    </div>
+  </div>
+  <!--  Scripts-->
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+   <script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope,$location) {    
+        // $scope.createLink = function(userName,password) {
+    
+            
+        //   var url = 'fselite://localhost:8100/';
+
+        //   setTimeout(function () { url = 'fselite://localhost:8100/';window.location(url ,'_self'); }, 300);
+
+        //   url = "https://play.google.com/store/apps/details?id=com.ionicframework.snowapp184742&hl=en";
+        
+        //   window.open(url ,'_self');   // worked on web & Mobile
+        
+        // }
+
+      // $scope.open_appstore = function() {
+      //   alert('open_appstore');
+      //     window.location='https://play.google.com/store/apps/details?id=com.ionicframework.snowapp184742&hl=en';
+      // }
+
+      $scope.try_to_open_app = function() {
+        // alert('in try_to_open_app app');
+        //   setTimeout('open_appstore()', 1000);
+
+          setTimeout(function () { window.location = "https://play.google.com/store/apps/details?id=com.ionicframework.snowapp184742&hl=en"; }, 2);
+          window.location = "fselite://localhost:8100/?WOID=1299513";
+          e.preventDefault();
+
+      }
+
+    });
+
+  </script>
+</body>
+</html>
