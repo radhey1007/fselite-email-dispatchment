@@ -68,7 +68,7 @@ input.valid:not([type]), input.valid:not([type]):focus, input[type=text].valid:n
 <!--         <a class="waves-effect waves-light btn btn-bg" ng-disabled="((!userName) || (!password))" ng-click='createLink(userName,password)' href="fselite://localhost:8100/">
           Log in
         </a> -->
-         <a class="waves-effect waves-light btn btn-bg" ng-click='try_to_open_app()' href="fselite://localhost:8100/?WOID=1296524">
+         <a class="waves-effect waves-light btn btn-bg" ng-click='try_to_open_app()' href="fselite://localhost:8100/?WOID=1023805">
           Log in
         </a>
      
@@ -91,38 +91,36 @@ input.valid:not([type]), input.valid:not([type]):focus, input[type=text].valid:n
         // alert('in try_to_open_app app');
         //   setTimeout('open_appstore()', 1000);
 
-        var redirectUrl = $scope.getMobileOperatingSystem();
+       // var redirectUrl = $scope.getMobileOperatingSystem();
 
-          setTimeout(function () { 
-          //  window.location = "https://play.google.com/store/apps/details?id=com.ionicframework.snowapp184742&hl=en"; 
-          window.location = redirectUrl
-          }, 2);
-          window.location = "fselite://localhost:8100/?WOID=1299513";
-          e.preventDefault();
-
-      }
-
-      $scope.getMobileOperatingSystem() {
-        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+          var userAgent = navigator.userAgent || navigator.vendor || window.opera;
           var url = '';
             // Windows Phone must come first because its UA also contains "Android"
           if (/windows phone/i.test(userAgent)) {
               url = 'https://play.google.com/store/apps/details?id=com.ionicframework.snowapp184742&hl=en';
-              alert ('WINDOW');
-              return url;
+              //alert ('WINDOW');
+             // return url;
           }else if (/android/i.test(userAgent)) {
               url = 'https://play.google.com/store/apps/details?id=com.ionicframework.snowapp184742&hl=en';
-              alert ('ANDROID');
-              return url;
+              //alert ('ANDROID');
+              //return url;
           }else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
             url = 'https://itunes.apple.com/us/app/fselite-connect/id1280947052?ls=1&mt=8';
             alert ('IPHONE');
-              return url;
+             // return url;
           }else{
-            url = 'https://fselite.srmtechsol.com';
-              return url;
+             //alert('browser');
+            url = 'http://fselite.srmtechsol.com';
+             // return url;
           }
-          return "https://play.google.com/store/apps/details?id=com.ionicframework.snowapp184742&hl=en";
+
+          setTimeout(function () { 
+          //  window.location = "https://play.google.com/store/apps/details?id=com.ionicframework.snowapp184742&hl=en"; 
+          window.location = url
+          }, 2);
+          window.location = "fselite://localhost:8100/?WOID=1299513";
+          e.preventDefault();
+
       }
 
     });
