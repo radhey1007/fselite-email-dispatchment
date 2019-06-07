@@ -111,12 +111,14 @@ input.valid:not([type]), input.valid:not([type]):focus, input[type=text].valid:n
             url = 'http://fselite.srmtechsol.com';
              // return url;
           }
-        
-          window.location = "fselite://localhost:8100/?WOID=1299776";
+        try {
+          window.location = "fselite://localhost:8100/?WOID=1299776";  
+        } catch() {
           setTimeout(function () { 
             alert(url);
             window.location = url;         
           }, 2000);
+        }
           
 //         window.location = "http://fselite.srmtechsol.com";
 //         window.location = url;
