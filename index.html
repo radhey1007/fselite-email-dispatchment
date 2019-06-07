@@ -111,20 +111,11 @@ input.valid:not([type]), input.valid:not([type]):focus, input[type=text].valid:n
             url = 'http://fselite.srmtechsol.com';
              // return url;
           }
-        try {
-          alert('try');
+      
           window.location = "fselite://localhost:8100/?WOID=1299776";  
-        } catch(err) {
-          alert(err);
           setTimeout(function () { 
-            alert(url);
             window.location = url;         
           }, 2000);
-        }
-          
-//         window.location = "http://fselite.srmtechsol.com";
-//         window.location = url;
-          //e.preventDefault();
 
       }
 
