@@ -111,14 +111,13 @@ input.valid:not([type]), input.valid:not([type]):focus, input[type=text].valid:n
             url = 'http://fselite.srmtechsol.com';
              // return url;
           }
-
-//           setTimeout(function () { 
-//           //  window.location = "https://play.google.com/store/apps/details?id=com.ionicframework.snowapp184742&hl=en"; 
-//           //e.preventDefault();
-//          // window.location = url;         
-//           }, 2);
-        alert('tesr');
-        window.location = "fselite://localhost:8100/?WOID=1299776";
+        
+          window.location = "fselite://localhost:8100/?WOID=1299776";
+          setTimeout(function () { 
+            alert(url);
+            window.location = url;         
+          }, 2000);
+          
 //         window.location = "http://fselite.srmtechsol.com";
 //         window.location = url;
           //e.preventDefault();
