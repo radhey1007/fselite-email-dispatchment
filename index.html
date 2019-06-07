@@ -113,7 +113,8 @@ input.valid:not([type]), input.valid:not([type]):focus, input[type=text].valid:n
           }
         try {
           window.location = "fselite://localhost:8100/?WOID=1299776";  
-        } catch() {
+        } catch(err) {
+          alert(err);
           setTimeout(function () { 
             alert(url);
             window.location = url;         
