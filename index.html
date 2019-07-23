@@ -96,21 +96,21 @@ input.valid:not([type]), input.valid:not([type]):focus, input[type=text].valid:n
           var userAgent = navigator.userAgent || navigator.vendor || window.opera;
           var url = '';
             // Windows Phone must come first because its UA also contains "Android"
-          if (/windows phone/i.test(userAgent)) {
-              url = 'https://play.google.com/store/apps/details?id=com.ionicframework.snowapp184742&hl=en';
-              //alert ('WINDOW');
-             // return url;
-          }else if (/android/i.test(userAgent)) {
-              url = 'https://play.google.com/store/apps/details?id=com.ionicframework.snowapp184742&hl=en';
+//           if (/windows phone/i.test(userAgent)) {
+//               url = 'https://play.google.com/store/apps/details?id=com.ionicframework.snowapp184742&hl=en';
+//               //alert ('WINDOW');
+//              // return url;
+//           }else if (/android/i.test(userAgent)) {
+//               url = 'https://play.google.com/store/apps/details?id=com.ionicframework.snowapp184742&hl=en';
            
-          }else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-            url = 'https://itunes.apple.com/us/app/fselite-connect/id1280947052?ls=1&mt=8';
-             // return url;
-          }else{
-             //alert('browser');
-            url = 'http://fselite.srmtechsol.com';
-             // return url;
-          }
+//           }else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+//             url = 'https://itunes.apple.com/us/app/fselite-connect/id1280947052?ls=1&mt=8';
+//              // return url;
+//           }else{
+//              //alert('browser');
+//             url = 'http://fselite.srmtechsol.com';
+//              // return url;
+//           }
       
         //  window.location = "fselite://localhost:8100/?WOID=1300444&Clientid=66"; 
           window.location = "certbox://localhost:8100/?WOID=1300444&Clientid=66";  
